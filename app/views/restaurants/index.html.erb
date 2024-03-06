@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-between">
+  <h1>Restaurants</h1>
+  <%= link_to "New restaurant", new_restaurant_path, class: "btn btn-primary p-3 m-3" %>
+</div>
+
+<div id="restaurants">
+  <% @restaurants.each do |restaurant| %>
+    <div class="border p-3 my-3">
+      <%= render partial: "restaurant", locals: { restaurant: restaurant } %>
+      <p>
+        <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary" %>
+      </p>
+    </div>
+  <% end %>
+</div>
